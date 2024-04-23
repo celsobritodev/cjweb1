@@ -56,6 +56,15 @@ public class UsuarioDAO {
 		}
 
 	}
+	
+	public void salvar(Usuario usuario) {
+		
+		if(usuario.getId()!=null &&usuario.getId()!=0) {
+			alterar(usuario);
+		} else
+			cadastrar(usuario);
+	}
+	
 
 	public void excluir(Usuario usuario) {
 
