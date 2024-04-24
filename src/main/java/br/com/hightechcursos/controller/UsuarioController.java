@@ -1,5 +1,6 @@
 package br.com.hightechcursos.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -33,11 +34,18 @@ public class UsuarioController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Chamando o Metodo GET");
 		
+		
+		// 1 Obter a lista
 		UsuarioDAO  usuarioDAO = new UsuarioDAO();
 		List<Usuario> lista = usuarioDAO.buscarTodos();
 		
-		PrintWriter saida = response.getWriter();
-		saida.println(lista);
+		
+		// Engavetar no request a lista
+		request.setAttribute("lista", lista);
+		
+		// Encaminhamento ao JSP
+	    RequestDispatcher saida = request.getRequestDispatcher("listausuarios.jsp"); 	
+		saida.forward(request,response);
 		
 				
 		
