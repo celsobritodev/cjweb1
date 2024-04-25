@@ -10,22 +10,36 @@
 </head>
 <body>
 
+
+   <table border="1">
+
+  <tr bgcolor="#CCCCC">
+   <th>ID </th> <th>Nome</th> <th>Login</th> <th>Senha</th>
+  </tr>
+  
+
 <%
 
  List<Usuario> lista = (List<Usuario>) request.getAttribute("lista");
 
- for(Usuario usu: lista) {
+ 
+for(Usuario usu: lista) {
+%>
 	 
-	 
-	 
-	 
-	 
-	 
- }
+	<tr> 
+        <td> <%=usu.getId() %>    </td>
+        <td> <% out.println(usu.getNome()); %>  </td>
+        <td> <%=usu.getLogin() %> </td>
+        <td> <%=usu.getSenha() %> </td>
+    </tr>
 
 
+
+<%  
+}
 
 %>
+</table>
 
 
 </body>
