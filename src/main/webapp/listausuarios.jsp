@@ -8,7 +8,8 @@
 
 <body>
 
-
+  <c:import url="includes/menu.jsp"></c:import>
+  
    <table border="1">
 
   <tr bgcolor="#CCCCC">
