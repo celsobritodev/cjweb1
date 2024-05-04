@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import br.com.hightechcursos.entidades.Usuario;
@@ -50,7 +52,13 @@ public class Autenticador extends HttpServlet {
 		
 		if(usuRetorno!=null) {
 			
-			request.getRequestDispatcher("index.jsp");
+			
+			// criando sessao
+			HttpSession sessao = request.getSession();
+		    sessao.setAttribute("usuLogado", usuRetorno);
+		    
+		    // encaminha ao index
+			request.getRequestDispatcher("index.jsp").forward(request,response);
 			
 		}else {
 			
