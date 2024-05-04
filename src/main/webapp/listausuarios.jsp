@@ -1,11 +1,11 @@
-<%@ page import="br.com.hightechcursos.entidades.Usuario" %>    
-<%@ page import="java.util.List" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Agora usando JSTL</title>
 </head>
+
 <body>
 
 
@@ -16,34 +16,26 @@
   </tr>
   
 
-<%
 
- List<Usuario> lista = (List<Usuario>) request.getAttribute("lista");
-
- 
-for(Usuario usu: lista) {
-%>
+<c:forEach items="${requestScope.lista}" var="usu">
 	 
 	<tr> 
-        <td> <%=usu.getId()    %> </td>
-        <td> <%=usu.getNome()  %> </td>
-        <td> <%=usu.getLogin() %> </td>
-        <td> <%=usu.getSenha() %> </td>
+        <td> ${usu.id}    </td>
+        <td> ${usu.nome}  </td>
+        <td> ${usu.login} </td>
+        <td> ${usu.senha} </td>
         <td>
         
-         <a href="usucontroller.do?acao=exc&id=<%= usu.getId()%>"> Excluir </a>
+         <a href="usucontroller.do?acao=exc&id=${usu.id}"> Excluir </a>
          | 
-         <a href="usucontroller.do?acao=alt&id=<%= usu.getId()%>"> Alterar </a>
+         <a href="usucontroller.do?acao=alt&id=${usu.id}"> Alterar </a>
         
         </td>
     </tr>
 
 
+</c:forEach>
 
-<%  
-}
-
-%>
 </table>
 
 

@@ -38,17 +38,16 @@ public class UsuarioController extends HttpServlet {
 		
 		if((acao!=null) && acao.equals("exc")) {
 			
-			
 			String id = request.getParameter("id");
-	
 			Usuario usuario = new Usuario();
 			usuario.setId(Integer.parseInt(id));
 			usuarioDAO.excluir(usuario);
+			// redirecionando pelo cliente
+			response.sendRedirect("usucontroller.do?acao=lis");
 			
 		}
 		
         if((acao!=null) && acao.equals("alt")) {
-			
 			
 			String id = request.getParameter("id");
 	        Usuario usuario = usuarioDAO.buscarPorId(Integer.parseInt(id));
@@ -61,7 +60,6 @@ public class UsuarioController extends HttpServlet {
        
         
        if((acao!=null) && acao.equals("cad")) {
-			
 			
 	        Usuario usuario = new Usuario();
 	        usuario.setId(0);
@@ -79,10 +77,8 @@ public class UsuarioController extends HttpServlet {
 		// 1 Obter a lista
 		List<Usuario> lista = usuarioDAO.buscarTodos();
 		
-		
 		// Engavetar no request a lista
 		request.setAttribute("lista", lista);
-		
 		// Encaminhamento ao JSP
 	    RequestDispatcher saida = request.getRequestDispatcher("listausuarios.jsp"); 	
 		saida.forward(request,response);
