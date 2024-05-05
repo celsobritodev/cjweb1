@@ -11,7 +11,7 @@
   
   <h1> Bem vindo, '${sessionScope.usuLogado.nome}'  ao sistema !</h1>
   
-  <img src="images/hightech.jpg"/>
+  <img src="images/hightech.jpg" width="200" height="100"/>
   
 </body>
 </html>

@@ -4,6 +4,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Agora usando JSTL</title>
+
+<script type="text/javascript">
+
+ function confirmaExclusao(id) {
+	 
+	 
+	 if (window.confirm("Tem certeza que deseja excluir o Registro:"+id+ "?")) {
+		 location.href="usucontroller.do?acao=exc&id="+id;
+	 }
+
+	 
+ }
+
+
+
+</script>
+
+
 </head>
 
 <body>
@@ -27,7 +45,7 @@
         <td> ${usu.senha} </td>
         <td>
         
-         <a href="usucontroller.do?acao=exc&id=${usu.id}"> Excluir </a>
+         <a href="javascript:confirmaExclusao(${usu.id})"> Excluir </a>
          | 
          <a href="usucontroller.do?acao=alt&id=${usu.id}"> Alterar </a>
         

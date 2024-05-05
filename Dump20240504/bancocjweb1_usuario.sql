@@ -28,7 +28,7 @@ CREATE TABLE `usuario` (
   `login` varchar(20) DEFAULT NULL,
   `senha` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'talita','fran','bybyfr'),(2,'Jao da Silva','js','js123'),(3,'Maria','zeze','678'),(4,'Juca da Silva','juju','ju123'),(6,'Virmeson','vir','vv123'),(7,'JANJAO','123','tomate'),(8,'celso','oslec','tata');
+INSERT INTO `usuario` VALUES (2,'Jaojao da Silva','js','js123'),(7,'JANJAO','123','tomate'),(8,'celso','oslec','tata'),(9,'PEDRO SILVA SAURO','PSS','PSS1'),(11,'Leticinha','lindinha','lekiti'),(12,'Ze','zeze','ze1'),(13,'jonas','jojon','baleia'),(14,'Babyta','lekita','leleka');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-23  9:40:57
+-- Dump completed on 2024-05-04 21:57:46
